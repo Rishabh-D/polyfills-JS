@@ -1,0 +1,19 @@
+const arr = [3, 5, 2, 1, 7];
+
+Array.prototype.mymap = function (fn) {
+  const res = [];
+
+  for (let i = 0; i < this.length; i++) {
+    res.push(fn(this[i]));
+  }
+
+  return res;
+};
+
+
+// output in the console will be empty for this assert if mymap and map returns same array (not refernce, but values of the array elements)
+console.assert(
+  arr.mymap((x) => x + 1),
+  arr.map((x) => x + 1)
+);
+
