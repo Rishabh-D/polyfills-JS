@@ -1,0 +1,17 @@
+const arr = [3, 5, 2, 1, 7];
+
+Array.prototype.myfilter = function (fn) {
+  const out = [];
+  for (let i = 0; i < this.length; i++) {
+    if (fn(this[i])) out.push(this[i]);
+  }
+  return out;
+};
+
+
+
+console.assert(
+  arr.myfilter((x) => x % 2 === 0),
+  arr.myfilter((x) => x % 2 === 0)
+);
+
